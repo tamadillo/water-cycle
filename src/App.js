@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [clouds, setClouds] = useState({ 1: false, 2: false, 3: false });
+  const [clouds, setClouds] = useState({ 1: true, 2: true, 3: true });
 
   const cloudNext = () => {
     setClouds({ 1: !clouds[1], 2: !clouds[2], 3: !clouds[3] });
