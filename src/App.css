@@ -69,57 +69,30 @@
   }
 }
 
+.card {
+  -webkit-box-shadow: 13px 19px 44px 1px #141515;
+  -moz-box-shadow: 13px 19px 44px 1px #141515;
+  box-shadow: 13px 19px 44px 1px #141515;
+}
+
+.sky {
+  position: relative;
+  height: 100px;
+}
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
+
+.App {
+  background-image: url(/water_cycle_background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
 #root {
   height: 100%;
-  background: rgba(183, 222, 237, 1);
-  background: -moz-linear-gradient(
-    top,
-    rgba(183, 222, 237, 1) 0%,
-    rgba(113, 206, 239, 1) 16%,
-    rgba(33, 180, 226, 1) 51%,
-    rgba(183, 222, 237, 1) 100%
-  );
-  background: -webkit-gradient(
-    left top,
-    left bottom,
-    color-stop(0%, rgba(183, 222, 237, 1)),
-    color-stop(16%, rgba(113, 206, 239, 1)),
-    color-stop(51%, rgba(33, 180, 226, 1)),
-    color-stop(100%, rgba(183, 222, 237, 1))
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(183, 222, 237, 1) 0%,
-    rgba(113, 206, 239, 1) 16%,
-    rgba(33, 180, 226, 1) 51%,
-    rgba(183, 222, 237, 1) 100%
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(183, 222, 237, 1) 0%,
-    rgba(113, 206, 239, 1) 16%,
-    rgba(33, 180, 226, 1) 51%,
-    rgba(183, 222, 237, 1) 100%
-  );
-  background: -ms-linear-gradient(
-    top,
-    rgba(183, 222, 237, 1) 0%,
-    rgba(113, 206, 239, 1) 16%,
-    rgba(33, 180, 226, 1) 51%,
-    rgba(183, 222, 237, 1) 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(183, 222, 237, 1) 0%,
-    rgba(113, 206, 239, 1) 16%,
-    rgba(33, 180, 226, 1) 51%,
-    rgba(183, 222, 237, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#b7deed', GradientType=0 );
 }
