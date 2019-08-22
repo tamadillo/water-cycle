@@ -33,6 +33,11 @@
   position: relative;
 }
 
+.rain-cloud {
+  width: 200px;
+  position: absolute;
+}
+
 .rail-1 {
   margin-top: 10px;
   position: absolute;
@@ -73,6 +78,12 @@
   -webkit-box-shadow: 13px 19px 44px 1px #141515;
   -moz-box-shadow: 13px 19px 44px 1px #141515;
   box-shadow: 13px 19px 44px 1px #141515;
+}
+.card-text {
+  font-size: 2rem;
+}
+.card-title {
+  font-size: 3rem;
 }
 
 .sky {
