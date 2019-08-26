@@ -2,25 +2,23 @@ import React, { useState } from "react";
 import "./App.css";
 
 const Evapo = () => (
-  <div style={{ position: "absolute", top: "63vh", left: "78vw" }}>
-    <img src="/evapo.png" style={{ width: "30px" }} />
-    <img src="/evapo.png" style={{ width: "30px" }} />
-    <img src="/evapo.png" style={{ width: "30px" }} />
-    <img src="/evapo.png" style={{ width: "30px" }} />
-    <img src="/evapo.png" style={{ width: "30px" }} />
+  <div style={{ position: "absolute", top: "63vh", left: "68vw" }}>
+    {[...Array(20).keys()].map(() => 
+      <img alt="evaporation ray" src="/evapo.png" style={{ width: "30px" }} />
+    )}
   </div>
 );
 
 const Clouds = () => (
   <div className="sky">
     <div className="rail-1">
-      <img src="/cloud_1.png" className="cloud App-cloud-1" alt="logo" />
+      <img src="/cloud_1.png" className="cloud App-cloud-1" alt="cloud 1" />
     </div>
     <div className="rail-2">
-      <img src="/cloud_2.png" className="cloud App-cloud-2" alt="logo" />
+      <img src="/cloud_2.png" className="cloud App-cloud-2" alt="cloud 2" />
     </div>
     <div className="rail-3">
-      <img src="/cloud_3.png" className="cloud App-cloud-3" alt="logo" />
+      <img src="/cloud_3.png" className="cloud App-cloud-3" alt="cloud 3" />
     </div>
   </div>
 );
@@ -30,27 +28,31 @@ const Percipitation = () => (
     <img
       src="/cloud_1.png"
       className="rain-cloud"
-      alt="logo"
+      alt="cloud 1"
       style={{ left: "0px" }}
     />
     <img
       src="/cloud_2.png"
       className="rain-cloud"
-      alt="logo"
+      alt="cloud 2"
       style={{ left: "200px" }}
     />
     <img
       src="/cloud_3.png"
       className="rain-cloud"
-      alt="logo"
+      alt="cloud 3"
       style={{ left: "400px" }}
     />
-    <img src="/rain.png" style={{ position: "absolute", top: "120px" }} />
+    <img alt="rain" src="/rain.png" style={{ position: "absolute", top: "120px" }} />
   </div>
 );
-const Runoff = () => <div>RUNOFF</div>;
-const Groundwater = () => <div>GROUNDWATER</div>;
-const Respiration = () => <div>RESPIRATION</div>;
+const Runoff = () => <div>
+    <img alt="falls" src="/falls.png" style={{ position: "absolute", top: "58vh", left: '19vw', width: '60px' }} />
+    <img alt="falls" src="/falls.png" style={{ position: "absolute", top: "68vh", left: '21vw', width: '96px' }} />
+    <img alt="falls" src="/falls.png" style={{ position: "absolute", top: "45vh", left: '15vw', width: '60px' }} />
+    <img alt="falls" src="/falls.png" style={{ position: "absolute", top: "58vh", left: '39vw', width: '31px' }} />
+    <img alt="falls" src="/falls.png" style={{ position: "absolute", top: "71vh", left: '41vw', width: '60px' }} />
+</div>;
 
 const data = [
   {},
@@ -111,9 +113,6 @@ const data = [
     show: Runoff
   },
   {
-    show: Groundwater
-  },
-  {
     title: "Ground water",
     content:
       "Ounce it rains water soaks into the ground ,this is ground water." +
@@ -122,10 +121,6 @@ const data = [
       "the pools underground, these pools are called aquifers.",
     top: "20vh",
     left: "30vw",
-    show: Groundwater
-  },
-  {
-    show: Respiration
   },
   {
     title: "Respiration",
@@ -134,13 +129,11 @@ const data = [
       "ctombind oxegen and glucose to make carbon dioxide, water and heatenergy.",
     top: "20vh",
     left: "30vw",
-    show: Respiration
   }
 ];
 
 const Card = ({ title, content, top, left }) => (
   <div className="card" style={{ width: "42rem", top, left }}>
-    {/* <img className="card-img-top" src="..." alt="Card image cap"> */}
     <div className="card-body">
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{content}</p>
@@ -171,10 +164,20 @@ function App() {
     }
   };
 
+  const handleClick = event => {
+    let localIndex = index + 1;
+    if (data.length <= localIndex) {
+      localIndex = 0;
+    }
+    setIndex(localIndex);
+  };
+
   return (
     <div
+      id='water-cycle'
       className="App w-100 h-100 mx-auto"
       onKeyDown={handleKeyPress}
+      onClick={handleClick}
       autoFocus
       tabIndex="0"
     >
@@ -183,6 +186,7 @@ function App() {
         {data[index].show && data[index].show()}
         {data[index].title ? <Card {...data[index]} /> : <div />}
       </div>
+      <div className="instructions">click and after clicking use left and right arrows</div>
     </div>
   );
 }

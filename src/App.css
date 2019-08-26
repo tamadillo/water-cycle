@@ -107,3 +107,12 @@ body {
 #root {
   height: 100%;
 }
+
+.instructions {
+  position: absolute;
+  font-size: 2rem;
+  width: 100%;
+  color: #cccccc;
+  text-align: center;
+  bottom: 0px;
+}
